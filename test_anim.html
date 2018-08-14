@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf8">
+		<title>动画测试</title>
+		<script src="jquery.js"></script>
+	</head>
+	<body>
+		<img src="qiqiu1.png" id="img"/>
+		<script>
+			var bool=false;
+			$("#img").click(function(){
+				bool=!bool;
+				if(bool){
+			
+					$(this).animate({
+						"width":"1000px"
+					},2000);
+				}else{
+					$(this).animate({
+						"width":"200px"
+					},2000);
+				}
+			});
+		</script>
+	</body>
+</html>
