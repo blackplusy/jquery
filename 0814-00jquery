@@ -27,21 +27,83 @@ jquery
 	2、jquery如果加载后就执行，用$(function(){
 				});
 			$(document).ready(function(){
-			});
+			});*
 	3、动画,animate()
 		animate({
 			"属性名":"动画到达的值"
 		},毫秒);
 		动画效果意义：指多少毫秒以后元素由初值到达属性名所对应的值
+	4、触发器:trigger
+		触发元素的方法
+		一个元素想要触发另一个元素的方法时，用trigger;
+		audio
+		$("#audio").trigger("play");触发audio标签的play方法
+jqm   全称 jquery mobile
+	需要文件: jquery.mobile.css jquery.mobile.js
+	步骤：（1)移动端布局一般先要写一句
+			<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	       (2)引用jquery需要的文件
+			引用外部的css外链:<link rel='stylesheet" href="jquery.mobile.min.css">
+			引用js时，要先引用jquery.js
+			再引用jquery.mobile.js
+		(3)制作移动端页面，可以都用div,先产生移动端页面
+			用jquery mobile产生移动端页面:<div data-role="page">
+		(4)用jquery mobile产生移动端的头部:<div data-role="header">
+		(5)用juqery mobile 产生移动端的中间内容 :<div data-role="content">
+		(6)用jquery mobile产生移动端的底部:<div data-role="footer">
+		(7)可以修改jquery mobile头部、底部颜色格调 data-theme="a",a可以替代成a,b,c,d,e
+		(8)在尾部产生导航栏 
+			<div data-role="navbar">里面引用的语句有<ul><li><a href="#">home</a></li></ul>
+		(9)如果想将头部、尾部固定在移动端页面的顶部或者是底部，data-position="fixed"
+		具体的jquery mobile框架见代码：
+		移动端的布局：九宫格   列表
+		实现移动端的九宫格:
+			jqm class="ui-grid-a"标志一行有两列
+			    class="ui-grid-b"标志一行有3列
+			    class="ui-grid-c"标志一行有4列
+			每列元素用class="ui-block-a"
+			"ui-block-a"是每一行的起始，后面跟"ui-block-b","ui-block-c"
+			注意："ui-grid-a" 做最外层div
+			"ui-block-a"做里层div
+		实现移动端的列表:
+			布局用ul来实现，data-role="listview"来实现列表
+			data-role="divider"是一个分隔线
+		jqm里面按钮的处理：
+			可以用a标签，加属性 data-role="button"是按钮
+		
+		jqm实现按钮组:
+			data-role="controlgroup"
+		对按钮组实现横向或者纵向
+			默认纵向
+			data-type="horizontal"横 向
+			data-type="vertical"纵向	
+		h5新增audio标签，实现音频功能 
+			<audio src="音频地址"></audio>
+		如果要显示播放条，加一个属性 controls="true"
+			<audio src="音频地址" controls="true"></audio>
+		audio标签:
+			方法: play() 播放  stop()停止  pause()暂停   
+			属性:  muted是否静音(true就静音) 
+			       volume音量  值最小0  最大1
+		jqm原理：
+			jqm头部文件<head>默认只加载一次
+			强迫jqm加载，链接的时候做data-ajax=false
+			
+		jqm重要：
+			原生开发移动界面
+
+			打包后<a>在手机无法跳转		
+			引入jqm框架，不用框架技术.打包后,<a>可以跳转
+			
+			
+
+
+
+
+
+
+
+
+
+	 	
 	
-	
-	
-
-
-
-
-
-
-
-
-
