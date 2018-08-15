@@ -1,0 +1,64 @@
+前端工具软件:
+	HBuilder webStorm sublime
+	Dreamweaver nodepad++
+	
+bootstrap:
+	常用样式归类，常用动效归类
+	一套代码，在移动端和pc端都适用，苹果和安卓都适用
+	基本原理：
+		1、栅格原理：把所有的设备都分成12栅格，一行12列
+		2、设备分成四种： 超小      小      中      大
+			          xs       sm       md    lg
+				 老牌手机  手机     ipad  pc
+		3、响应式：当宽度达到一定条件，进行样式的内容响应-=--------->对应技术：
+							媒体查询:@media screen(min-with:800px){color:red}
+							(当设备大于等于800px，颜色为红色)
+						min-width可以限制网页缩小时元素的最小宽度
+		   与之对应：自适应：百分比布局，浏览器宽度随时变，网页元素的样式也随时变
+bootstrap布局的注意点:
+	1、pc站:要写<meta name="keywords" content="">
+		   <meta name="description" content="">
+	2、移动端:<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	3、pc站:尽量采用html5语义化标签<header> ,<menu>,<nav>,<footer>,<section>等 
+	4、移动端：元素可都采用div
+	5、引入bootstrap的样式文件:CSS <link rel="stylesheet" href="bootstrap.css">注意css的路径
+	6、引入bootstrap的js文件:先引入jquery.js再引入bootstrap.js
+		<script src="jquery.js"></script>
+		<script src="bootstrap.js"></script>
+bootstrap常用样式:
+       1、class="container" 居中
+       2、bootstrap思路：理解成表格布局，先定义行，再定义列
+		定义行:<div class="row">
+		定义列的时候，列的类名是连接符:col-设备-占几列 例如col-xs-2超小设备两列
+		定义列:<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+		定义列的偏移,偏移也是一个连接符:col-设备-offset-占几列 例如col-xs-offset-2超小设备空2列
+			<div class="col-xs-offset-2 col-xs-2 col-sm-offset-2 col-sm-2 
+			col-md-offset-2 col-md-2 col-lg-offset-2 col-lg-2">
+	3、bootstrap按钮设置了六种:
+		class="btn btn-default" 灰色
+		class="btn btn-primary" 蓝色
+		class="btn btn-success" 绿色
+		class="btn btn-warning" 橙色
+		class="btn btn-danger" 红色
+		class="btn btn-info"  浅蓝
+	 4、凡是跟输入框有关系的样式，都可以找bootstrap组件里的输入框组
+		bootstrap缺陷:定义不了间距,
+	 5、bootstrap组件有导航组件，导航组件中需要激活的选项加类 class="active",样式不满足项目需求，查找元素找到相应的样式内容，复制到你的文件样式表中，修改样式，覆盖上面的样式，注意，你写的样式表要在最后面
+	  6、轮播属于bootstrap的javascript插件，轮播一般分三大项：点击的切换的标志，轮播的图片，左右箭头
+	    bootstrap轮播：切换的标志用ol有序列表,li必须有data-target属性，属性必须链接到轮播的id上，必须有data-slide-to能够点击后切换到的图片， 这个参数从0 例，data-slide-to="0"
+	                   轮播的图片用div包的img标签，每一项必须则class="item" 当前显示的图片需要 class="active"
+			   左右箭头用a实现，a的href属性指向于轮播的id,需要用data-slide="previous"向前,data-slide="next"向后
+	 
+
+
+
+
+
+
+
+
+
+
+
+
+
