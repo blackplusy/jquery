@@ -48,11 +48,57 @@ bootstrap常用样式:
 	    bootstrap轮播：切换的标志用ol有序列表,li必须有data-target属性，属性必须链接到轮播的id上，必须有data-slide-to能够点击后切换到的图片， 这个参数从0 例，data-slide-to="0"
 	                   轮播的图片用div包的img标签，每一项必须则class="item" 当前显示的图片需要 class="active"
 			   左右箭头用a实现，a的href属性指向于轮播的id,需要用data-slide="previous"向前,data-slide="next"向后
-	 
+	 7、左浮动class="pull-left" 右浮动class="pull-right"
+	 8、图片边缘有3种样式: img-circle圆形图 img-rounded圆角图 img-thumbnail缩略图的意思（现象：带边框的圆角)
+	 9、工具提示:
+<button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Tooltip on top</button>
+		data-toggle:指明当前的元件是一个工具提示(tooltip)		
+		data-placement:top指的是工具提示的方向 top是上面，bottom是下面 left是左面 right是右面
+		title:工具提示中的内容
+	10、弹出框:
+		<button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">点我弹出/隐藏弹出框</button>
+		data-toggle:boostrap所有插件都要这样做，这里的值是popover
+		title:弹出框的标题
+		data-content:弹出框的内容
+		data-placement:top指的是工具提示的方向 top是上面，bottom是下面 left是左面 right是右面
+	11、模态框：它放在网页body里面哪一个地方都可以，网页显示的时候不占位
+		<div class="modal fade">
+  			<div class="modal-dialog">
+    				<div class="modal-content">
+      					<div class="modal-header">
+        					<button type="button" class="close" data-dismiss="modal" ><span aria-hidden="true">&times;</span></button>
+        					<h4 class="modal-title">Modal title</h4>
+      					</div>
+      					<div class="modal-body">
+        					<p>One fine body&hellip;</p>
+      					</div>
+      					<div class="modal-footer">
+        					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        					<button type="button" class="btn btn-primary">Save changes</button>
+      					</div>
+    			</div><!-- /.modal-content -->
+  		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+	    第一行： modal模态框 fade显示时由虚到实
+	    第二行:  modal-dialog指的模态对话框
+	    第三行:modal的具体内容
+		以上三行模态框固定的内容
+	  	<modal-header>模态框标题
+		<modal-body>内容里可以加图片 
+		<modal-footer>模态框底部
+		&times;相当于windows窗品的X data-dismiss="modal"可以关闭这个模态框
+		调用此模态框，可以用button元素
+		<button data-toggle="modal" data-target="模态框的id">调用模态框按钮的文本</button>
 
-
-
-
+	12、Collapse插件:收缩插件
+		做一个链接a
+		data-toggle="collapse"指示data-toggle为收缩
+		href链接到对应的id上,对应的id 如果想默认收缩加class="collapse"
+		例如:<a href="#aa" data-toggle='collapse'>
+	14、徽章： class="badge" 组件
+		用在微信未读信息
+	
+			
 
 
 
