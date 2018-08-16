@@ -37,6 +37,84 @@ web站点:  前端(js)+后台(python,java,nodejs)
 				set tx_isolation="SERIALIZABLE"序列化，最安全,浪费效率
 			乐观锁:直接执行事务
 			悲观锁:lock table或者for update行锁
+	
+	5、前端和后端的通信技术：ajax
+	   AJAX asynchronize异步的 Javascript  a  and x XML
+	   html标签是官方制定的
+	   xml标签形成的文件，标签可以自定义
+		<book>
+			<author>lg</author>
+			<name>sss</name>
+		</book>
+	   
+	   网络上提供的数据有两种格式：提供xml格式,http://www.webxml.com.cn
+				 网络上提供给我们字典类的数据  {'name':'zhangshan','age':23,'address','axxxxxx'}
+				 json数据
+					聚合数据
+	   AJAX:1、局部刷新  2、异步通信技术
+	   ajax工作原理:用户发送请求----->ajax服务器----->代替用户进行请求----->发送请求到服务器-->有响应
+				------>ajax-------->通知用户有数据回传----->显示
+			web2.0
+           ajax的原生实现方法（javascript如何实现ajax)
+		 有适配问题:ie    AcitveXObject
+			   非ie  XMLHttpRequest对象
+		状态码：
+			200 成功
+			5字打头 服务端有问题
+			4字开头 客户端有问题   404路径问题，找不到页面
+			302 转发，url地址发生了一个改变
+		原生ajax的写法:
+			（1）先new XMLHttpRequest()
+			(2)open要请求的地址，open时参数(方法,'地址',true异步false同步)
+			(3)send发送这个请求
+			(4)在onreadystatechange方法中获取结果
+				onreadystatechage=function(){
+					if (xhr.status==200 && xhr.readyState==4){
+						结果在responseText
+					}
+				}
+		缺点:1、解决同源，比较麻烦
+		     2、不同浏览器不同的ajax对象
+		ajax:同源策略:
+			网站一般情况下只允许同域名内的页面进行数据之间的获取
+		jquery框架
+			ajax能够充分解决以上问题的，
+			跨域请求技术jsonp
+			<img src没关系， script src 没关系,
+			jsonp利用script里面src没有关系,做的技术
+			http://www.sojson.com/open/api/weather/json.shtml?city=深圳
+			jsonp实现方式:
+			$.ajax({
+				url:'jsonp要请求的地址',
+				type:'获取的方式（GET或POST)',
+				dataType:'jsonp',（允许跨域）
+				success:function(result){
+					console.log(result.data);
+				},(成功调用)
+				error:function(){
+				}
+		
+			});
+			信息会不会都在成功里，有没有请求的信息在error里.
+			jsonp实现跨域第一步，第二步他只能成功返回json数据
+			promise处理如果ajax返回值不是xml或者json,返回地址，接着走then后的语句，如果还是地址
+			还是走then后面的语句,
+			解决的问题是ajax嵌套的难题
+			new Promise().then{
+			}.then(){
+			}.then(){
+			}
+		请求头:
+			COOKIES：缓存中的值对记录
+			Referer:防止盗链
+			User-Agent:浏览器版本,系统(伪装浏览器)
+		响应头:
+			cache-control:是否使用缓存
+			Content-Type:text/html;表示接收的是网页
+				     image/png;表示接收的是图片
+			
+			Access-Control-Allow-Origin:*,设置了任何人可访问，没有跨域
+			中文编码:utf8(3) gb2312(2) GBK(2)
 			
 		      			
 	
