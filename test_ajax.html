@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf8">
+		<title>jquery AJAX测试</title>
+	</head>
+	<body>
+		<script src="jquery.js"></script>
+		<script>
+			$.ajax({
+				/*url:'http://www.sojson.com/open/api/weather/json.shtml?city=深圳',*/
+				url:'http://ws.webxml.com.cn/WebServices/TrainTimeWebService.asmx/getDetailInfoByTrainCode?TrainCode=G66&UserID=',
+				type:'GET',
+				dataType:'jsonp',
+				success:function(result){
+					console.log(result.data);
+				},
+				error:function(result){
+					console.log(result);
+				}
+			});
+		</script>
+	</body>
+</html>
