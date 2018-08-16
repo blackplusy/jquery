@@ -1,0 +1,56 @@
+web站点:  前端(js)+后台(python,java,nodejs)
+
+	  1、域名:www.sohu.com  注册:万网
+	  2、主机 分共享和独享两种 宽带供应商:北方  网通   南方  电信
+		  双线 
+	    网上网页空间
+	
+	 3、域名备案:20个工作日 
+	 4、mysql数据库,定义表的结构
+		增  删   改  查
+		增:insert into 表名 values()
+		删:delete from 表名 where 条件
+		改:update 表名 set 字段名=值 where 条件
+		查:select 字段名 from  表  where 条件  group by 分组字段 having 条件  order by desc|asc limit 
+		事务:都在并发的时候发现的 
+			commit提交
+		      rollback回滚
+		      事务有四个隔离机制
+				读--未提交
+				读--已提交
+				可以重复读
+				序列化
+		     造成事务的几种现象： 
+			脏读:脏读在两个事务都未提交，两边事物级别都是读-未提交，两边都可以读出未提交的数据结果，
+			不可重复读:两次读取的数据不一致,造成用户体验度
+			幻读:发生在可重复读，当发生添加或者删除的时候，产生了前后数据不一致,就是幻读 
+		     事务级别在变量tx_ioslation
+				select @@tx_isolation;
+			默认的是REPEATABLE-READ，可重复读 
+			设置级别:
+				set tx_isolation="READ-UNCOMMITTED"读未提交，产生脏读 
+				start transaction;开启事务
+				commit;提交
+				rollback回滚
+				set tx_isolation="READ-COMMITTED"读已提交，产生不可重复读 
+				set tx_isolation="REPEATABLE-READ"可重复读,产生幻读 
+				set tx_isolation="SERIALIZABLE"序列化，最安全,浪费效率
+			乐观锁:直接执行事务
+			悲观锁:lock table或者for update行锁
+			
+		      			
+	
+
+
+
+
+
+
+
+
+
+
+					
+	
+		  
+	
