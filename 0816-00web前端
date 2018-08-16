@@ -78,14 +78,19 @@ web站点:  前端(js)+后台(python,java,nodejs)
 		ajax:同源策略:
 			网站一般情况下只允许同域名内的页面进行数据之间的获取
 		jquery框架
-			ajax能够充分解决以上问题的，
+			信息会不ajax能够充分解决以上问题的，
 			跨域请求技术jsonp
-			<img src没关系， script src 没关系,
-			jsonp利用script里面src没有关系,做的技术
-			http://www.sojson.com/open/api/weather/json.shtml?city=深圳
+			jsonp利用了html中标签
+			<img src="http://www.abc.com/a.jpg"/>和
+			<script src=""http://js.yaofang.cn/pc/jquery-1.8.3.min.js"></script>是可以通过
+			不同的域名访问到对应的内容的，这说明script标签与同源策略无关,
+			jsonp利用script里面src与同源策略没有关系的特点而实现的技术
+			可以利用下面的json请求的地址：
+				http://www.sojson.com/open/api/weather/json.shtml?city=深圳
+			请求天气预报，获取回传的内容（需要跨域）
 			jsonp实现方式:
 			$.ajax({
-				url:'jsonp要请求的地址',
+				url:'jsonp要请求的地址',s
 				type:'获取的方式（GET或POST)',
 				dataType:'jsonp',（允许跨域）
 				success:function(result){
@@ -95,7 +100,7 @@ web站点:  前端(js)+后台(python,java,nodejs)
 				}
 		
 			});
-			信息会不会都在成功里，有没有请求的信息在error里.
+			会都在成功里，有没有请求的信息在error里.
 			jsonp实现跨域第一步，第二步他只能成功返回json数据
 			promise处理如果ajax返回值不是xml或者json,返回地址，接着走then后的语句，如果还是地址
 			还是走then后面的语句,
